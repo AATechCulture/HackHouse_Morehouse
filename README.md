@@ -43,4 +43,6 @@ HackHouse
 * Jeremy Samuel
 * Troy Boxton
 * Eric Harrison
-* Amir Harris 
+* Amir Harris
+
+Presentation Link: https://app.pitch.com/app/presentation/0c631cdc-344a-4994-9dc1-a1d681bb6811/6765ca8f-5015-476a-8e70-87878a07d152/71927fd5-dbef-49ee-ba97-8bec7888c482
