@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/HackHouse_Morehouse/static/css/main.6cd0cff0.css",
-    "main.js": "/HackHouse_Morehouse/static/js/main.909d6c3d.js",
+    "main.css": "/HackHouse_Morehouse/static/css/main.9b42ad72.css",
+    "main.js": "/HackHouse_Morehouse/static/js/main.bb9f43bc.js",
     "index.html": "/HackHouse_Morehouse/index.html",
-    "main.6cd0cff0.css.map": "/HackHouse_Morehouse/static/css/main.6cd0cff0.css.map",
-    "main.909d6c3d.js.map": "/HackHouse_Morehouse/static/js/main.909d6c3d.js.map"
+    "main.9b42ad72.css.map": "/HackHouse_Morehouse/static/css/main.9b42ad72.css.map",
+    "main.bb9f43bc.js.map": "/HackHouse_Morehouse/static/js/main.bb9f43bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cd0cff0.css",
-    "static/js/main.909d6c3d.js"
+    "static/css/main.9b42ad72.css",
+    "static/js/main.bb9f43bc.js"
   ]
 }
