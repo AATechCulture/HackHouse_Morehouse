@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
@@ -9,13 +8,20 @@ import { Navbar } from './components/Navbar';
 import { ExplorePage } from './components/ExplorePage';
 import { CreateEventForm } from './components/CreateEventForm';
 import { EventPage } from './components/EventPage';
+import { EventMetrics} from './components/EventMetrics';
 import { ChatbotMatching } from './components/ChatbotMatching';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { CorporateProfile } from './components/CorporateProfile';
 import { ProfilePage } from './components/ProfilePage';
+import { MyVolunteering } from './components/MyVolunteering';
+import { NonprofitProfile } from './components/NonprofitProfile';
+import { MockDataProvider } from './contexts/MockDataContext';
+import { CompanyExplorer } from './components/CompanyExplorer';
+import { Chat } from './components/Chat';
+import { ChatsTab } from './components/ChatsTab';
 import { useAuth } from './contexts/AuthContext';
 
-// Protected Route Component
+
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   if (!user) {
@@ -24,7 +30,6 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Layout Component with Navbar
 const DashboardLayout = ({ children }) => {
   return (
     <>
@@ -110,6 +115,54 @@ function AppRoutes() {
         </ProtectedRoute>
       } />
 
+      <Route path="/event-metrics" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <EventMetrics />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/nonprofit/:id" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <NonprofitProfile />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/volunteer-dashboard" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <MyVolunteering />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/explore-companies" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+          <CompanyExplorer />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/chat/:id" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+          <Chat />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/chats" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+          <ChatsTab />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
       {/* Catch all route */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
@@ -119,13 +172,15 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <AppProvider>
-        <Router>
-          <div className="min-h-screen bg-gray-100">
-            <AppRoutes />
-          </div>
-        </Router>
-      </AppProvider>
+      <MockDataProvider>
+        <AppProvider>
+          <Router>
+            <div className="min-h-screen bg-gray-100">
+              <AppRoutes />
+            </div>
+          </Router>
+        </AppProvider>
+      </MockDataProvider>
     </AuthProvider>
   );
 }

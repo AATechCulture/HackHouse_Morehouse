@@ -21,7 +21,7 @@ const MatchScore = ({ score }) => {
       <div className="bg-gray-200 rounded-full h-2.5">
         <div
           className={`h-2.5 rounded-full ${getScoreColor(score)} transition-all duration-500`}
-          style={{ width: `${score}%` }}
+          style={{ width: `${Math.min(score, 100)}%` }}
         />
       </div>
     </div>
@@ -115,11 +115,10 @@ Response:`;
     }
   };
 
-
   const renderMessageWithLinksAndMarkdown = (text) => {
     // check if this is a recommendation message
     if (!text.includes('---RECOMMENDATION START---')) {
-      // if not render as regular markdown
+      // If not render as regular markdown
       return (
         <ReactMarkdown
           className="prose prose-blue max-w-none"
@@ -140,26 +139,26 @@ Response:`;
         </ReactMarkdown>
       );
     }
-  
+
     const recommendations = text.split('---RECOMMENDATION START---')
       .filter(part => part.trim())
       .map(part => part.split('---RECOMMENDATION END---')[0].trim());
-  
+
     return recommendations.map((recommendation, index) => {
       const idMatch = recommendation.match(/\[NONPROFIT_ID:(\d+)\]/);
       if (!idMatch) return null;
-  
+
       const id = idMatch[1];
       const lines = recommendation.split('\n').filter(line => line.trim());
-
+      
       const orgName = lines[0].replace(/\[NONPROFIT_ID:\d+\]/, '').trim();
       
       const scoreMatch = recommendation.match(/Alignment Score:\s*(\d+)/);
-      const score = scoreMatch ? parseInt(scoreMatch[1]) : null;
+      const score = scoreMatch ? Math.min(parseInt(scoreMatch[1]), 100) : null;
       
       const contentStart = recommendation.indexOf('Key Alignments:');
       const content = contentStart !== -1 ? recommendation.slice(contentStart) : '';
-  
+
       return (
         <div key={index} className="mb-6">
           <Link
@@ -168,7 +167,7 @@ Response:`;
           >
             {orgName}
           </Link>
-          {score && <MatchScore score={score} />}
+          {score !== null && <MatchScore score={score} />}
           <ReactMarkdown
             className="prose prose-blue max-w-none"
             components={{
@@ -190,8 +189,6 @@ Response:`;
       );
     });
   };
-
-  
 
   const handleSendMessage = async () => {
     if (!input.trim()) return;
