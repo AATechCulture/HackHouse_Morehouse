@@ -8,7 +8,7 @@ export function ProfilePage() {
     name: "Education First",
     mission: "Empowering communities through education",
     impact: {
-      studentsHelped: 1000,
+      studentsHelped: 1200,
       programsLaunched: 15,
       communitiesServed: 25
     },
