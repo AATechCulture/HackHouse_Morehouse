@@ -3,16 +3,19 @@
     "version": "1.0.0",
     "description": "Platform connecting non-profits with companies for partnerships and donations",
     "scripts": {
-      "start": "node server/server.js",
-      "server": "nodemon server/server.js",
-      "client": "cd client && npm start",
-      "dev": "concurrently \"npm run server\" \"npm run client\"",
-      "install-all": "npm install && cd client && npm install",
-      "build": "cd client && npm run build",
-      "test": "concurrently \"cd server && npm test\" \"cd client && npm test\""
+        "start": "node server/server.js",
+        "server": "nodemon server/server.js",
+        "client": "cd client && npm start",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "install-all": "npm install && cd client && npm install",
+        "build": "cd client && npm run build",
+        "test": "concurrently \"cd server && npm test\" \"cd client && npm test\""
     },
     "devDependencies": {
-      "concurrently": "^8.2.0",
-      "nodemon": "^3.0.1"
+        "concurrently": "^8.2.0",
+        "nodemon": "^3.0.1"
+    },
+    "dependencies": {
+        "openai": "^4.72.0"
     }
-  }
+}
