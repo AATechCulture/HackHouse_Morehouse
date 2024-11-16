@@ -1,3 +1,5 @@
+// MockDataContext.js
+
 import React, { createContext, useContext, useState } from 'react';
 
 const MockDataContext = createContext();
@@ -78,20 +80,20 @@ export const mockCompanies = [
 ];
 
 export const mockNonprofits = [
-    {
-        id: 1,
-        name: "Education First",
-        email: "education@example.com",
-        type: "nonprofit",
-        mission: "Providing quality education to underprivileged communities",
-        focusAreas: ["Education", "Youth Development", "Digital Literacy"],
-        location: "National",
-        impact: {
-        peopleHelped: 10000,
-        programsLaunched: 15,
-        communitiesServed: 25
-        }
-    },
+  {
+    id: 1,
+    name: "Education First",
+    email: "education@example.com",
+    type: "nonprofit",
+    mission: "Providing quality education to underprivileged communities",
+    focusAreas: ["Education", "Youth Development", "Digital Literacy"],
+    location: "National",
+    impact: {
+      peopleHelped: 10000,
+      programsLaunched: 15,
+      communitiesServed: 25
+    }
+  },
   {
     id: 2,
     name: "Green Earth Initiative",
@@ -134,156 +136,180 @@ export const mockNonprofits = [
 ];
 
 export const mockEvents = [
-    {
-      id: 1,
-      nonprofitId: 1,
-      nonprofitName: "Education First",
-      title: "Back to School Drive 2024",
-      description: "Annual school supply drive for underprivileged students",
-      tags: ["Education", "Youth", "Community"],
-      donationGoal: 50000,
-      currentDonations: 35000,
-      eventDate: "2024-08-15",
-      location: "Multiple Cities",
-      volunteers: [],
-      useOfFunds: [
-        { category: "School Supplies", percentage: 60 },
-        { category: "Distribution", percentage: 25 },
-        { category: "Administration", percentage: 15 }
-      ],
-      topDonors: [
-        { name: "Tech Innovators Inc.", amount: 20000 },
-        { name: "Anonymous", amount: 10000 },
-        { name: "Community Bank", amount: 5000 }
-      ]
-    },
-    {
-      id: 2,
-      nonprofitId: 2,
-      nonprofitName: "Green Earth Initiative",
-      title: "Climate Action Summit 2024",
-      description: "Annual conference bringing together environmental leaders and activists",
-      tags: ["Environmental", "Climate Action", "Education"],
-      donationGoal: 75000,
-      currentDonations: 45000,
-      eventDate: "2024-09-20",
-      location: "Virtual",
-      volunteers: [],
-      useOfFunds: [
-        { category: "Platform and Technology", percentage: 40 },
-        { category: "Speakers and Content", percentage: 35 },
-        { category: "Marketing", percentage: 25 }
-      ],
-      topDonors: [
-        { name: "Green Energy Solutions", amount: 25000 },
-        { name: "Tech Innovators Inc.", amount: 15000 }
-      ]
-    },
-    {
-      id: 3,
-      nonprofitId: 3,
-      nonprofitName: "Tech4All",
-      title: "Digital Skills Bootcamp",
-      description: "Intensive 12-week program teaching essential digital skills",
-      tags: ["Education", "Technology", "Workforce Development"],
-      donationGoal: 100000,
-      currentDonations: 65000,
-      eventDate: "2024-07-01",
-      location: "Multiple Cities",
-      volunteers: [],
-      useOfFunds: [
-        { category: "Equipment and Software", percentage: 45 },
-        { category: "Instructors", percentage: 35 },
-        { category: "Materials", percentage: 20 }
-      ],
-      topDonors: [
-        { name: "Tech Innovators Inc.", amount: 30000 },
-        { name: "HealthCare Plus", amount: 20000 }
-      ]
-    },
-    {
-      id: 4,
-      nonprofitId: 4,
-      nonprofitName: "Community Health Network",
-      title: "Mobile Health Clinic Initiative",
-      description: "Bringing healthcare services to underserved communities",
-      tags: ["Healthcare", "Community", "Medical Services"],
-      donationGoal: 150000,
-      currentDonations: 85000,
-      eventDate: "2024-10-01",
-      location: "Regional",
-      volunteers: [],
-      useOfFunds: [
-        { category: "Medical Equipment", percentage: 50 },
-        { category: "Staff", percentage: 30 },
-        { category: "Transportation", percentage: 20 }
-      ],
-      topDonors: [
-        { name: "HealthCare Plus", amount: 50000 },
-        { name: "Green Energy Solutions", amount: 25000 }
-      ]
-    }
-  ];
+  {
+    id: 1,
+    nonprofitId: 1,
+    nonprofitName: "Education First",
+    title: "Back to School Drive 2024",
+    description: "Annual school supply drive for underprivileged students",
+    tags: ["Education", "Youth", "Community"],
+    donationGoal: 50000,
+    currentDonations: 35000,
+    eventDate: "2024-08-15",
+    location: "Multiple Cities",
+    volunteers: [],
+    useOfFunds: [
+      { category: "School Supplies", percentage: 60 },
+      { category: "Distribution", percentage: 25 },
+      { category: "Administration", percentage: 15 }
+    ],
+    topDonors: [
+      { name: "Tech Innovators Inc.", amount: 20000 },
+      { name: "Anonymous", amount: 10000 },
+      { name: "Community Bank", amount: 5000 }
+    ]
+  },
+  {
+    id: 2,
+    nonprofitId: 2,
+    nonprofitName: "Green Earth Initiative",
+    title: "Climate Action Summit 2024",
+    description: "Annual conference bringing together environmental leaders and activists",
+    tags: ["Environmental", "Climate Action", "Education"],
+    donationGoal: 75000,
+    currentDonations: 45000,
+    eventDate: "2024-09-20",
+    location: "Virtual",
+    volunteers: [],
+    useOfFunds: [
+      { category: "Platform and Technology", percentage: 40 },
+      { category: "Speakers and Content", percentage: 35 },
+      { category: "Marketing", percentage: 25 }
+    ],
+    topDonors: [
+      { name: "Green Energy Solutions", amount: 25000 },
+      { name: "Tech Innovators Inc.", amount: 15000 }
+    ]
+  },
+  {
+    id: 3,
+    nonprofitId: 3,
+    nonprofitName: "Tech4All",
+    title: "Digital Skills Bootcamp",
+    description: "Intensive 12-week program teaching essential digital skills",
+    tags: ["Education", "Technology", "Workforce Development"],
+    donationGoal: 100000,
+    currentDonations: 65000,
+    eventDate: "2024-07-01",
+    location: "Multiple Cities",
+    volunteers: [],
+    useOfFunds: [
+      { category: "Equipment and Software", percentage: 45 },
+      { category: "Instructors", percentage: 35 },
+      { category: "Materials", percentage: 20 }
+    ],
+    topDonors: [
+      { name: "Tech Innovators Inc.", amount: 30000 },
+      { name: "HealthCare Plus", amount: 20000 }
+    ]
+  },
+  {
+    id: 4,
+    nonprofitId: 4,
+    nonprofitName: "Community Health Network",
+    title: "Mobile Health Clinic Initiative",
+    description: "Bringing healthcare services to underserved communities",
+    tags: ["Healthcare", "Community", "Medical Services"],
+    donationGoal: 150000,
+    currentDonations: 85000,
+    eventDate: "2024-10-01",
+    location: "Regional",
+    volunteers: [],
+    useOfFunds: [
+      { category: "Medical Equipment", percentage: 50 },
+      { category: "Staff", percentage: 30 },
+      { category: "Transportation", percentage: 20 }
+    ],
+    topDonors: [
+      { name: "HealthCare Plus", amount: 50000 },
+      { name: "Green Energy Solutions", amount: 25000 }
+    ]
+  }
+];
 
-  const initialChats = {
-    messages: [],
-    chatRooms: {}
+const initialChats = {
+  messages: [],
+  chatRooms: {}
+};
+
+export function MockDataProvider({ children }) {
+  const [companies] = useState(mockCompanies);
+  const [nonprofits] = useState(mockNonprofits);
+  const [events, setEvents] = useState(mockEvents);
+  const [chats, setChats] = useState(initialChats);
+
+  const addMessage = (fromId, toId, content) => {
+    const roomId = [fromId, toId].sort().join('-');
+    const message = {
+      id: Date.now(),
+      fromId,
+      toId,
+      content,
+      timestamp: new Date().toISOString(),
+    };
+
+    setChats(prevChats => ({
+      ...prevChats,
+      chatRooms: {
+        ...prevChats.chatRooms,
+        [roomId]: [...(prevChats.chatRooms[roomId] || []), message],
+      },
+    }));
   };
 
-  export function MockDataProvider({ children }) {
-    const [companies] = useState(mockCompanies);
-    const [nonprofits] = useState(mockNonprofits);
-    const [events, setEvents] = useState(mockEvents);
-    const [chats] = useState(initialChats);
 
-    const addVolunteer = (eventId, user) => {
-      setEvents(prevEvents => prevEvents.map(event => {
-        if (event.id === eventId) {
-          if (event.volunteers?.some(v => v.userId === user.id)) {
-            return event;
-          }
-  
-          const updatedEvent = {
-            ...event,
-            volunteers: [
-              ...(event.volunteers || []),
-              {
-                userId: user.id,
-                name: user.name,
-                signupDate: new Date().toISOString()
-              }
-            ]
-          };
-          return updatedEvent;
+  const addVolunteer = (eventId, user) => {
+    setEvents(prevEvents => prevEvents.map(event => {
+      if (event.id === eventId) {
+        if (event.volunteers?.some(v => v.userId === user.id)) {
+          return event;
         }
-        return event;
-      }));
-    };
-  
-    const removeVolunteer = (eventId, userId) => {
-      setEvents(prevEvents => prevEvents.map(event => {
-        if (event.id === eventId) {
-          return {
-            ...event,
-            volunteers: event.volunteers?.filter(v => v.userId !== userId) || []
-          };
-        }
-        return event;
-      }));
-    };
-  
-    return (
-      <MockDataContext.Provider value={{ 
-        companies, 
-        nonprofits, 
-        events, 
-        chats,
-        addVolunteer,
-        removeVolunteer
-      }}>
-        {children}
-      </MockDataContext.Provider>
-    );
-  }
-  
-  export const useMockData = () => useContext(MockDataContext);
+
+        const updatedEvent = {
+          ...event,
+          volunteers: [
+            ...(event.volunteers || []),
+            {
+              userId: user.id,
+              name: user.name,
+              signupDate: new Date().toISOString()
+            }
+          ]
+        };
+        return updatedEvent;
+      }
+      return event;
+    }));
+  };
+
+  const removeVolunteer = (eventId, userId) => {
+    setEvents(prevEvents => prevEvents.map(event => {
+      if (event.id === eventId) {
+        return {
+          ...event,
+          volunteers: event.volunteers?.filter(v => v.userId !== userId) || []
+        };
+      }
+      return event;
+    }));
+  };
+
+  return (
+    <MockDataContext.Provider value={{ 
+      companies, 
+      nonprofits, 
+      events, 
+      chats,
+      addVolunteer,
+      removeVolunteer,
+      addMessage
+    }}>
+      {children}
+    </MockDataContext.Provider>
+  );
+}
+
+export const useMockData = () => {
+  const { companies, nonprofits, events, chats, addVolunteer, removeVolunteer, addMessage } = useContext(MockDataContext);
+  return { companies, nonprofits, events, chats, addVolunteer, removeVolunteer, addMessage };
+};

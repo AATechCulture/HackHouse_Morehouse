@@ -131,6 +131,14 @@ function AppRoutes() {
         </ProtectedRoute>
       } />
 
+      <Route path="/company/:id" element={
+        <ProtectedRoute>
+          <DashboardLayout>
+            <CorporateProfile />
+          </DashboardLayout>
+        </ProtectedRoute>
+      } />
+
       <Route path="/volunteer-dashboard" element={
         <ProtectedRoute>
           <DashboardLayout>
