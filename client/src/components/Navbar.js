@@ -1,4 +1,3 @@
-// components/Navbar.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -35,6 +34,9 @@ export function Navbar() {
               <Link to="/corporate-profile" className="text-white hover:text-blue-200">
                 Company Profile
               </Link>
+              <Link to="/chats" className="text-white hover:text-blue-200">
+                Chats
+              </Link>
             </>
           )}
           
@@ -43,11 +45,17 @@ export function Navbar() {
               <Link to="/create-event" className="text-white hover:text-blue-200">
                 Create Event
               </Link>
+              <Link to="/explore-companies" className="text-white hover:text-blue-200">
+                Explore Companies
+              </Link>
               <Link to="/nonprofit-profile" className="text-white hover:text-blue-200">
                 Profile
               </Link>
               <Link to="/event-metrics" className="text-white hover:text-blue-200">
                 Event Metrics
+              </Link>
+              <Link to="/chats" className="text-white hover:text-blue-200">
+                Chats
               </Link>
             </>
           )}

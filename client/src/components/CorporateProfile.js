@@ -1,4 +1,3 @@
-// components/CorporateProfile.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -6,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 export function CorporateProfile() {
   const { user } = useAuth();
   
-  // Mock data
+  // mock data
   const contributions = [
     {
       id: 1,
@@ -16,7 +15,6 @@ export function CorporateProfile() {
       date: "2024-03-15",
       type: "Monetary"
     },
-    // Add more mock contributions
   ];
 
   const partnerships = [
@@ -27,7 +25,6 @@ export function CorporateProfile() {
       focus: "Education",
       impact: "Helped 1000+ students"
     },
-    // Add more partnerships
   ];
 
   return (
