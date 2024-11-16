@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HackHouse_Morehouse/static/css/main.a596d8e8.css",
+    "main.js": "/HackHouse_Morehouse/static/js/main.4e5492a6.js",
+    "static/js/453.ca39e8ae.chunk.js": "/HackHouse_Morehouse/static/js/453.ca39e8ae.chunk.js",
+    "index.html": "/HackHouse_Morehouse/index.html",
+    "main.a596d8e8.css.map": "/HackHouse_Morehouse/static/css/main.a596d8e8.css.map",
+    "main.4e5492a6.js.map": "/HackHouse_Morehouse/static/js/main.4e5492a6.js.map",
+    "453.ca39e8ae.chunk.js.map": "/HackHouse_Morehouse/static/js/453.ca39e8ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a596d8e8.css",
+    "static/js/main.4e5492a6.js"
+  ]
+}
