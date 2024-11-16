@@ -1,21 +1,16 @@
+// src/contexts/AppContext.js
 import React, { createContext, useContext, useReducer } from 'react';
 
 const AppContext = createContext();
 
 const initialState = {
-  currentUser: null,
   events: [],
   profiles: [],
-  donations: [],
-  volunteers: [],
-  badges: [],
-  partnerships: []
+  donations: []
 };
 
 function appReducer(state, action) {
   switch (action.type) {
-    case 'SET_USER':
-      return { ...state, currentUser: action.payload };
     case 'ADD_EVENT':
       return { ...state, events: [...state.events, action.payload] };
     case 'UPDATE_EVENT':
@@ -25,7 +20,6 @@ function appReducer(state, action) {
           event.id === action.payload.id ? action.payload : event
         )
       };
-    
     default:
       return state;
   }
