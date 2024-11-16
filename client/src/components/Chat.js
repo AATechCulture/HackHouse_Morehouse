@@ -1,3 +1,4 @@
+// src/components/Chat.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useMockData } from '../contexts/MockDataContext';
@@ -9,11 +10,12 @@ export function Chat() {
   const { companies, nonprofits, chats, addMessage } = useMockData();
   const [input, setInput] = useState('');
 
-  // find chat participants for chat room
+  // Find chat participants
   const company = companies.find(c => c.id === parseInt(id));
   const nonprofit = nonprofits.find(n => n.id === parseInt(id));
   const participant = company || nonprofit;
 
+  // Get chat room ID
   const roomId = [user.id, parseInt(id)].sort().join('-');
   const messages = chats.chatRooms[roomId] || [];
 
